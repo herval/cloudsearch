@@ -1,0 +1,28 @@
+# The base url where this service is running. Used to assemble the redirectUrl for the authorize call.
+baseUrl: http://localhost:8080
+
+# A random secret to be passed to oauth provider calls as the required state field
+secret: foobar
+
+providers:
+  - name: google
+    clientId: xxxxxx
+    clientSecret: xxxxxx
+    authUrl: https://accounts.google.com/o/oauth2/v2/auth
+    tokenUrl: https://www.googleapis.com/oauth2/v4/token
+    authCodeParams:
+      access_type: offline
+
+  - name: dropbox
+    clientId: yyyyy
+    clientSecret: yyyyy
+    authUrl: https://www.dropbox.com/oauth2/authorize
+    tokenUrl: https://api.dropboxapi.com/oauth2/token
+
+  - name: slack
+    clientId: yyyyy
+    clientSecret: yyyyy
+    authUrl: https://slack.com/oauth/authorize
+    tokenUrl: https://slack.com/api/oauth.access
+    scopes:
+      - search:read

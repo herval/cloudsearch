@@ -1,0 +1,17 @@
+
+.active-services{
+  display: flex;
+}
+
+.active-services-logo{
+  margin-right: 5px;
+}
+
+.back{
+  float: right;
+}
+
+
+.settings{
+  margin: 20px;
+}

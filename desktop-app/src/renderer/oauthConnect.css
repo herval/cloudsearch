@@ -1,0 +1,11 @@
+.webview-page {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 700px;
+}
+
+.webview-pane {
+  flex-grow: 2;
+}

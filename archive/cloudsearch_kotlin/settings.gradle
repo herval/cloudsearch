@@ -1,0 +1,3 @@
+rootProject.name = 'cloudsearch'
+
+include 'common', 'embedded', 'cloud', 'api'

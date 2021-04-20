@@ -1,0 +1,17 @@
+jre_windows/
+accounts.dat*
+apps/desktop/cloudsearch-darwin-x64/
+apps/desktop/bin/
+cache_*
+.DS_Store
+.gradle
+.idea
+build/
+gradle/
+node_modules/
+.env
+out/
+data/
+STORAGE_PATH_IS_UNDEFINED/server.log
+server.log
+cloudsearch_kotlin.iml

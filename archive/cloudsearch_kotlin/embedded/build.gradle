@@ -1,0 +1,26 @@
+group 'hervalicious'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+
+mainClassName = "cloudsearch.embedded.Main"
+
+shadowJar {
+    baseName = 'cloudsearch'
+    classifier = null
+    version = null
+}
+
+
+dependencies {
+    compile project(":common")
+    compile project(":api")
+
+    compile "com.sparkjava:spark-template-handlebars:2.7.1"
+    compile "com.googlecode.cqengine:cqengine:2.12.4"
+
+    testCompile 'junit:junit:4.11'
+}
+

@@ -1,0 +1,29 @@
+group 'hervalicious'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+
+mainClassName = "cloudsearch.server.Main"
+
+shadowJar {
+    baseName = 'cloudsearch-server'
+    classifier = null
+    version = null
+}
+
+
+dependencies {
+    compile project(":common")
+    compile project(":api")
+
+    compile "com.sparkjava:spark-template-handlebars:2.7.1"
+
+    compile "org.jetbrains.exposed:exposed:0.9.1"
+    compile "postgresql:postgresql:9.1-901-1.jdbc4"
+    compile "com.h2database:h2:1.4.196"
+
+    testCompile 'junit:junit:4.11'
+}
+

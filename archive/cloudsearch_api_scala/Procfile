@@ -1,0 +1,1 @@
+api: target/universal/stage/bin/cloudsearch-api

@@ -2,7 +2,7 @@
 
 A realtime search tool for cloud accounts, with desktop clients for Mac & Windows.
 
-![](search.png)
+![](img.png)
 
 `cloudsearch` allows you to index and search content on cloud services such as Google services
 (Gmail, Google Drive, etc) and Dropbox, directly from a command line.

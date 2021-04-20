@@ -1,0 +1,11 @@
+.idea/
+.DS_Store
+log/
+tmp/
+db/*.sqlite3
+examples/
+sunspot-solr.pid
+log/development.log
+mongo/
+solr/
+.env

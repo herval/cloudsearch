@@ -1,0 +1,26 @@
+<div class="identity">
+  <%= image_tag @person.picture, width: 60 %>
+  <h1><%= @person.description %></h1>
+</div>
+
+<h2>Contacts</h2>
+<ul>
+  <% @person.emails.uniq.each do |e| %>
+    <li><%= e %></li>
+  <% end %>
+</ul>
+
+<h2>Social network profiles</h2>
+<div class="contacts">
+  <ul>
+    <% @person.profiles.collect(&:path).compact.each do |p|  %>
+      <li>
+        <%= p %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+<h2>Latest mentions</h2>
+<%= @person.documents[0].try(:id) %>

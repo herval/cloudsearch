@@ -1,0 +1,11 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap": "latest",
+    "typeahead.js": "latest",
+    "handlebars": "latest",
+    "atmosphere.js": "latest",
+    "jquery-atmosphere": "latest"
+  }
+}

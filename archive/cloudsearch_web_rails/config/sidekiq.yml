@@ -1,0 +1,10 @@
+---
+:verbose: true
+:pidfile: ./tmp/pids/sidekiq.pid
+:concurrency:  25
+:queues:
+  - :gmail
+  - :campfire
+  - :dropbox
+  - :facebook
+  - :campfire

@@ -1,0 +1,7 @@
+<%= form_for @account, url: sites_path, method: :post do |f| %>
+
+  Site root:
+  <%= f.text_field :root_path %>
+
+  <%= f.submit %>
+<% end %>

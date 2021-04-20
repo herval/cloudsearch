@@ -1,0 +1,4 @@
+solr: bundle exec rake sunspot:solr:run >& log/solr.log
+redis: redis-server >& log/redis.log
+web: rails s
+psql: postgres -D /usr/local/var/postgres

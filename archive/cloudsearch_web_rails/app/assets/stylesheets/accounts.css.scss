@@ -1,0 +1,43 @@
+@import "icons";
+
+.accounts {
+  clear: both;
+}
+
+.account {
+  border: 1px solid #e3e3e3;
+  background-color: white;
+  width: 128px;
+  min-height: 150px;
+  margin-right: 20px;
+  float: left;
+  text-align: center;
+
+  .account-icon {
+    float: left;
+    margin-right: 5px;
+    @include icons(128);
+    clear: both;
+  }
+
+  .services {
+    padding: 10px 0 0 10px;
+
+    .service {
+      list-style: none;
+      text-align: left;
+      min-height: 20px;
+
+      .service-icon {
+        @include icons(16);
+        float: left;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .details {
+    font-size: 0.8em;
+  }
+}
+

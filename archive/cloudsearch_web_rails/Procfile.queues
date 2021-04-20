@@ -1,0 +1,6 @@
+queue: bundle exec sidekiq -c 30
+gmail_queue: bundle exec sidekiq -c 10 -q gmail
+dropbox_queue: bundle exec sidekiq -c 30 -q dropbox
+/* downloader_queue: bundle exec sidekiq -c 10 -q downloaders */
+sidekiq_web: bundle exec thin -R sidekiq.ru start -p 3001
+sunspot_queue: bundle exec sidekiq -c 2 -q sunspot

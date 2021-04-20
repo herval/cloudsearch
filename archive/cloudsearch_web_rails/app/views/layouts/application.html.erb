@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloudsearch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/html5shiv.js"></script>
+    <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body data-token="<%= current_user.try(:authentication_token) %>" data-search-server="<%= SearchConfig::API_BASE %>">
+
+<script id="searching-indicator-template" type="text/x-handlebars-template">
+    <div class="searching loading {{service}}">
+        <div class="service"></div>
+    </div>
+</script>
+
+<script id="dropbox-result-template" type="text/x-handlebars-template">
+    <div class="result dropbox" data-timestamp="{{timestamp}}">
+        <span class="service-logo"></span>
+        {{{name}}} ({{kind}})
+        <div class="actions">
+            <a class="view action glyphicon glyphicon-eye-open" href="https://www.dropbox.com/home{{path}}" alt="Quick look" target="_blank"></a>
+        </div>
+    </div>
+</script>
+
+<script id="gmail-result-template" type="text/x-handlebars-template">
+    <div class="result gmail" data-timestamp="{{timestamp}}">
+        <span class="service-logo"></span>
+        {{{snippet}}}
+        <div class="actions">
+            <a class="view action glyphicon glyphicon-eye-open" href="https://mail.google.com/mail/#inbox/{{id}}" alt="Quick look" target="_blank"></a>
+        </div>
+    </div>
+</script>
+
+<script id="gdrive-result-template" type="text/x-handlebars-template">
+    <div class="result gdrive" data-timestamp="{{timestamp}}">
+        <span class="service-logo"></span>
+        {{name}}
+        {{kind}}
+        <div class="actions">
+          <a class="view action glyphicon glyphicon-eye-open" href="{{viewLink}}" alt="Quick look" target="_blank"></a>
+        </div>
+    </div>
+</script>
+
+<script id="gcontacts-result-template" type="text/x-handlebars-template">
+    <div class="result gcontacts" data-timestamp="{{timestamp}}">
+        <span class="service-logo"></span>
+        {{name}}
+        {{organizations}}
+
+        {{#emails}}
+            <div class="email">{{this}}</div>
+        {{/emails}}
+
+        {{#phones}}
+            <div class="phone">{{this}}</div>
+        {{/phones}}
+        <div class="actions">
+
+        </div>
+    </div>
+</script>
+
+<script id="searching-template" type="text/x-handlebars-template">
+    <div class="loading">
+        Searching...
+    </div>
+</script>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cloudsearch</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <%= render partial: "searches/nav_search" %>
+
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <!--<li><a href="/persons">Contacts</a></li>-->
+                    <!--<li><a href="/events">Calendar</a></li>-->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/accounts">Connected accounts</a></li>
+                            <li class="divider"></li>
+                            <!--<li class="dropdown-header">Nav header</li>-->
+                            <!--<li><a href="#">Separated link</a></li>-->
+                            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</div>
+
+<div class="container main-content">
+    <div class="search-status"></div>
+    <div class="search-results">
+    </div>
+    <%= yield %>
+</div>
+
+</body>
+</html>

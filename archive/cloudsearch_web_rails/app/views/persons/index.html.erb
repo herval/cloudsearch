@@ -1,0 +1,7 @@
+<% for person in @persons %>
+
+  <%= image_tag person.picture, width: 30, height: 30 %>
+  <%= link_to person.description, person_path(person) %>
+  <br>
+
+<% end %>

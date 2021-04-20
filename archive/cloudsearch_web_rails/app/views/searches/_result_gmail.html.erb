@@ -1,0 +1,5 @@
+<div>
+    [Gmail]
+    <%= result['snippet'].html_safe %>
+    <%= link_to "See more", "https://mail.google.com/mail/#inbox/#{result['id']}", target: "_blank" %>
+</div>

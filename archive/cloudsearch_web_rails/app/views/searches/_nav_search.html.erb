@@ -1,0 +1,6 @@
+<%= form_tag search_path, method: :get, class: "navbar-form navbar-nav search-box" do |f| %>
+  <div class="form-group search-bar">
+    <%= text_field_tag :q, params[:q], placeholder: "Search anything! Documents, contacts, events, phone numbers...", class: "form-control typeahead" %>
+  </div>
+  <%= submit_tag "Search", class: "btn btn-success" %>
+<% end %>

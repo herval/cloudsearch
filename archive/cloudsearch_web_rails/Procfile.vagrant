@@ -1,0 +1,4 @@
+web: bundle exec puma -e $RACK_ENV -b 'ssl://127.0.0.1:9292?key=/vagrant/config/vagrant/myssl.key&cert=/vagrant/config/vagrant/myssl.crt'
+susnpot: rake sunspot:solr:run
+queue: bundle exec sidekiq -C config/sidekiq.yml
+sidekiq_web: bundle exec thin -R sidekiq.ru start -p 3001

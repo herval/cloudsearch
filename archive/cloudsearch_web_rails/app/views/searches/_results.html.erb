@@ -1,0 +1,35 @@
+<% for result in @documents %>
+
+  <div class="document">
+    <div clas="title">
+      <%= link_to with_or_without_highlights(result, :title).html_safe, document_path(result.result.id, type: result.result.class.to_s) %>
+
+      <small class="actions">
+        <%= link_to "More like this", similar_search_path(q: params[:q], document_id: result.result.id) %>
+        <a href="">Share</a>
+      </small>
+    </div>
+
+    <div class="service-icon <%= result.result.class.to_s.underscore.dasherize %>"></div>
+    <div class="location">
+      <%= result.result.path %>
+    </div>
+
+    <div class="preview">
+      <%= with_or_without_highlights(result, :summary, 400) %>
+    </div>
+
+    <div class="tags">
+      <% result.result.persons.each do |p| %>
+        <%= link_to person_path(p.id) do %>
+          <span class="person">
+            <%= image_tag p.picture %>
+            <%= p.description %>
+          </span>
+         <% end %>
+      <% end %>
+
+    </div>
+  </div>
+
+<% end if @documents %>

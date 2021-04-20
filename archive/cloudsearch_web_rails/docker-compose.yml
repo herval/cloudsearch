@@ -1,0 +1,23 @@
+web:
+  build: ./
+  ports:
+  - "80:80"
+  links:
+  - postgres
+  environment:
+  - POSTGRES_PASSWORD=foobar
+  volumes:
+  - ~/Development/cloudsearch:/home/app/webapp:rw
+
+postgres:
+  image: postgres
+  expose:
+  - "5432"
+  environment:
+  - POSTGRES_PASSWORD=foobar
+
+elasticsearch:
+  image: elasticsearch
+
+redis:
+  image: redis

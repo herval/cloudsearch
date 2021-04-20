@@ -47,3 +47,7 @@ archive/cloudsearch_kotlin/embedded/cloudsearch.embedded.test.iml
 archive/cloudsearch_kotlin/embedded/embedded.iml
 archive/cloudsearch_kotlin/embedded/embedded_main.iml
 archive/cloudsearch_kotlin/embedded/embedded_test.iml
+archive/cloudsearch_web_rails/.env.development
+archive/cloudsearch_web_rails/.env.production
+archive/cloudsearch_web_rails/SCRATCHPAD
+archive/cloudsearch_web_rails/Vagrantfile

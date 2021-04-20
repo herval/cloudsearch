@@ -1,0 +1,156 @@
+@import "icons";
+
+.document {
+  padding-bottom: 25px;
+
+  .title {
+  }
+
+  &:hover {
+    .actions {
+      display: inline-block;
+    }
+  }
+
+  .actions {
+    display: none;
+    font-size: 0.8em;
+  }
+
+  .location {
+    color: green;
+    font-size: 0.85em;
+  }
+
+  .preview {
+
+  }
+
+  .tags {
+    padding-top: 2px;
+    font-size: 0.8em;
+
+    .person {
+      margin-right: 5px;
+      border: 1px solid #e3e3e3;
+      background-color: #fafafa;
+      min-height: 20px;
+      display: inline-block;
+      padding-right: 5px;
+
+      img {
+        background-image: url("icons/default-user-icon-22.png");
+        width: 22px;
+        height: 22px;
+        border-right: 1px solid #d8d8d8;
+      }
+    }
+  }
+
+  .service-icon {
+    float: left;
+    margin-right: 5px;
+    @include icons(16);
+  }
+}
+
+.search-bar {
+  .tt-menu {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid darkgray;
+    min-width: 200px;
+
+    .tt-cursor {
+      background-color: lightgray;
+    }
+  }
+}
+
+.search-status {
+  .searching {
+    width: 64px;
+    display: block;
+    height: 32px;
+
+    &.loading {
+      background: url("/assets/loading.gif") right no-repeat;
+    }
+
+    &.done {
+      background: url("/assets/tick_16.png") right no-repeat;
+    }
+
+    .service {
+      width: 32px;
+      height: 32px;
+      float: left;
+
+    }
+
+    &.dropbox {
+      .service {
+        background: blue url("icons/dropbox-16.png") center no-repeat;
+      }
+    }
+
+    &.google {
+      .service {
+        background: red url("icons/google-16.png") center no-repeat;
+      }
+    }
+  }
+}
+
+.search-results {
+  .result {
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    -webkit-box-shadow: 1px 1px 2px lightgray;
+    -moz-box-shadow: 1px 1px 2px lightgray;
+    box-shadow: 1px 1px 2px lightgray;
+
+    .service-logo {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+    }
+
+    .actions {
+      float: right;
+
+      a {
+        text-decoration: none;
+      }
+
+      .action {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+      }
+
+      .view {
+        //background-image: url("actions/eye.png");
+      }
+    }
+
+    &.dropbox {
+      .service-logo {
+        background: blue url("icons/dropbox-16.png") center no-repeat;
+      }
+    }
+
+    &.gdrive {
+      .service-logo {
+        background: red url("icons/google-16.png") center no-repeat;
+      }
+    }
+
+    &.gmail {
+      .service-logo {
+        background: red url("icons/gmail-16.png") center no-repeat;
+      }
+    }
+  }
+}

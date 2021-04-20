@@ -1,0 +1,102 @@
+source 'https://rubygems.org'
+
+ruby '2.1.6'
+
+gem 'rails', '4.1.0'
+
+gem 'pg'
+
+gem 'capistrano'
+
+# Use SCSS for stylesheets
+gem 'sass-rails'
+
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
+gem 'httparty'
+gem 'crack'
+
+gem 'bower-rails'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
+gem 'rails_12factor'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.2'
+
+gem 'sidekiq'
+gem 'sidekiq-unique-jobs'
+
+gem 'multi_json', '1.7'
+
+gem 'devise'
+gem 'devise-token_authenticatable'
+
+gem 'dotenv'
+
+gem 'htmlentities'
+
+#gem 'bson_ext'
+gem 'sunspot_rails'
+gem 'sunspot-queue'
+gem 'sunspot_solr'
+
+gem 'tinder', github: 'collectiveidea/tinder'
+gem 'basecamp'
+
+gem 'anemone'
+
+gem 'mime-types', require: "mime/types"
+
+gem 'foreman'
+gem 'ptools'
+
+gem 'dropbox-sdk', require: 'dropbox_sdk'
+
+gem 'omniauth'
+gem "omniauth-google-oauth2"
+gem 'omniauth-dropbox-oauth2'
+gem 'omniauth-37signals'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin-oauth2'
+
+gem 'fb_graph'
+
+gem 'linkedin'
+
+gem 'thread'
+gem 'gmail'
+gem 'mail'
+gem 'gmail-contacts'
+gem 'gmail_xoauth'
+
+gem 'sinatra', '>= 1.3.0', :require => nil
+
+gem 'puma'
+gem 'slim'
+gem 'thin'
+
+gem 'progress_bar'
+
+group :production do
+  # gem 'rails_12factor'
+end
+
+group :development do
+  gem 'pry'
+  gem 'letter_opener'
+end
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end

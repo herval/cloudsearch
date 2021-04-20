@@ -1,0 +1,22 @@
+<div class="main">
+  <% if @documents && !@documents.empty? %>
+    <div class="jumbotron">
+      About <%= @documents.total_count %> results
+
+      <% if @person %>
+        <br>
+        Involving <%= link_to @person.description, person_search_path(person_id: @person.id), target: "_blank" %>
+        <%= link_to "[clear]", search_path(q: params[:q]) %>
+        <%= hidden_field_tag :person_id, @person.id.to_s %>
+        <br>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= render partial: "results" %>
+
+
+  <% @results.each do |result| %>
+    <%= render partial: "result_#{result['source']}", locals: { result: result } %>
+  <% end if @results %>
+</div>

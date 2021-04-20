@@ -1,0 +1,53 @@
+@mixin icons($size) {
+  background-repeat: none;
+  width: $size + px;
+  height: $size + px;
+
+  &.gmail-email {
+    background-image: url("icons/gmail-16.png");
+    background-repeat: none;
+    background-color: #DD4B39;
+  }
+
+  &.dropbox-document {
+    background-image: url("icons/dropbox-16.png");
+    background-color: #2281CF;
+  }
+
+  &.google-account {
+    background-image: url("icons/google-128.png");
+    background-color: #245DC1;
+  }
+
+  &.dropbox-account {
+    background-image: url("icons/dropbox-128.png");
+    background-color: #2281CF;
+  }
+
+  &.facebook-account {
+    background-image: url("icons/facebook-128.png");
+    background-color: #3B5998;
+  }
+
+  &.thirty-seven-signals-account {
+    background-image: url("icons/basecamp-128.png");
+    background-color: #66AD4E;
+  }
+
+  &.linkedin-account {
+    background-image: url("icons/linkedin-128.png");
+    background-color: #007FB1;
+  }
+
+  &.basecamp-service {
+    background-image: url("icons/basecamp-16.png");
+    background-color: #66AD4E;
+  }
+
+  &.campfire-service {
+  }
+
+  &.highrise-service {
+  }
+
+}

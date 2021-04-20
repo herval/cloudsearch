@@ -1,0 +1,31 @@
+<div class="accounts">
+    <h1>Connect new account</h1>
+    <% for acct in Account.available_services %>
+      <div class="account">
+          <%= link_to acct[1] do %>
+            <div class="account-icon <%= acct[2] %>"></div>
+            <%= acct[0] %>
+          <% end %>
+      </div>
+
+    <% end %>
+    <!-- li><%= link_to "Custom site", new_site_path %></li -->
+</div>
+
+
+<div class="accounts">
+    <h2>Connected accounts</h2>
+    <% @accounts.each do |act| %>
+      <div class="account">
+          <div class="account-icon <%= act.class.to_s.underscore.dasherize %>"></div>
+          <%= t("account_type.#{act.class.to_s.underscore}") %>
+
+          <div class="details">
+              <%= act.email %>
+              <br>
+
+              <%= link_to "Disconnect", account_path(act), method: :delete %>
+          </div>
+      </div>
+    <% end %>
+</div>

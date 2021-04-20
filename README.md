@@ -10,3 +10,5 @@ A realtime search tool for cloud accounts, with desktop clients for Mac & Window
 Data gets indexed and stored _on your device only_ - this doesn't utilize any intermediate service
 for indexing, nor sends your documents or metadata _anywhere_. The only "intermediary" is an [auth gateway](http://github.com/herval/authgateway),
 used for Oauth2 token exchanges, but you can always deploy your own auth, for extra independence. It doesn't log or store any tokens.
+
+Special thanks to [geraldoramos](https://github.com/geraldoramos) for the UI work & desktop app code!
